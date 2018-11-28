@@ -1,0 +1,25 @@
+<%= form_for @place do |f| %>
+    <% if @place.errors.any? %>
+        <h2>ERRORS:</h2>
+        <ul>
+            <%@place.errors.full_messages.each do |message|%>
+                <li><%= message %></li>
+            <%end%>
+        </ul>
+    <%end%>
+    <p>
+      <%= f.label :name, "Place name" %><br/>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :longitude, "Longitude" %><br/>
+      <%= f.number_field :longitude ,step: :any%>
+    </p>
+    <p>
+      <%= f.label :latitude, "Latitude" %><br/>
+      <%= f.number_field :latitude,step: :any %>
+    </p>
+    <p>
+      <%= f.submit 'Submit' %>
+    </p>
+  <% end %>

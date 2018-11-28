@@ -1,0 +1,10 @@
+<h1>All Places</h1>
+
+<ul id="places">
+  <% @places.each do |place| %>
+    <li>
+    <%= place.name%>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "Create a New Place", new_place_path%>

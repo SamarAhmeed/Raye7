@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_27_044127) do
+ActiveRecord::Schema.define(version: 2018_11_27_231029) do
+
+  create_table "places", force: :cascade do |t|
+    t.string "name"
+    t.decimal "longitude"
+    t.decimal "latitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["longitude", "latitude"], name: "index_places_on_longitude_and_latitude", unique: true
+    t.index ["name"], name: "index_places_on_name", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

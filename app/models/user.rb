@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates_uniqueness_of :phone_number
   validates :full_name, presence: true, length: {minimum: 6}, on: :create, allow_nil: false
+  has_many :trips
 end

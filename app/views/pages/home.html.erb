@@ -1,6 +1,11 @@
-<h1>Pages#home</h1>
+<h1>Wellcome To Raye7 App</h1>
 <% if current_user %>
     <%= link_to 'Log Out',destroy_user_session_path, method: :delete %>
+    <% if current_user.role == 'driver'%>
+        <script type="text/javascript">
+         window.location.href="/trips" 
+        </script>
+    <%end%>
 <% else %>
     <%= link_to 'Log In',new_user_session_path %>
     <%= link_to 'Sign Up',new_user_registration_path %>

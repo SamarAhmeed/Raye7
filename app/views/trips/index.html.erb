@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h2 style='font-size: 26px;margin-bottom: 30px;color: #34ad00;font-weight: 700;'>New Trip</h2>
+
+<%= render 'form', trip: @trip %>
+<br />
+<h2 style='font-size: 26px;margin-bottom: 30px;color: #34ad00;font-weight: 700;'>Your Trips</h2>
+
+<table style="width:75%">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Time</th>
+      <th>Numberofseats</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trips.each do |trip| %>
+      <% if current_user.id == trip.user_id%>
+        <tr>
+          <td><%= trip.user.full_name %></td>
+          <td><%= trip.source.name %></td>
+          <td><%= trip.destination.name %></td>
+          <td><%= trip.time %></td>
+          <td><%= trip.numberOfSeats %></td>
+          <td><%= link_to 'Show', trip %></td>
+          <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
+          <td><%= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <%end%>
+
+    <% end %>
+  </tbody>
+</table>

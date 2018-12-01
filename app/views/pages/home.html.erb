@@ -1,12 +1,12 @@
-<h1>Wellcome To Raye7 App</h1>
-<% if current_user %>
-    <%= link_to 'Log Out',destroy_user_session_path, method: :delete %>
-    <% if current_user.role == 'driver'%>
-        <script type="text/javascript">
-         window.location.href="/trips" 
-        </script>
-    <%end%>
-<% else %>
-    <%= link_to 'Log In',new_user_session_path %>
-    <%= link_to 'Sign Up',new_user_registration_path %>
-<% end %>
+<!--- banner ---->
+<div class="banner">
+	<div class="container">
+		<h1 class="wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;"> Raye7 - The Best for Trips & Pickups</h1>
+	</div>
+</div>
+
+<% if current_user&& current_user.role == 'driver'%>
+    <% controller.redirect_to trips_path %>
+<%elsif current_user&&current_user.role == 'passenger'%>
+    <% controller.redirect_to pickups_path %>
+<%end%>

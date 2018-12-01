@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  source: one
+  destination: one
+  time: 2018-11-30 15:59:20
+  numberOfSeats: 1
+
+two:
+  user: two
+  source: two
+  destination: two
+  time: 2018-11-30 15:59:20
+  numberOfSeats: 1

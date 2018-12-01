@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @pickup.user.full_name %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @pickup.source.name %>
+</p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @pickup.destination.name %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @pickup.time %>
+</p>
+
+<%= link_to 'Edit', edit_pickup_path(@pickup) %> |
+<%= link_to 'Back', pickups_path %>

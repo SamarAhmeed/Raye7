@@ -4,14 +4,67 @@
     <title>Raye7</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <script type="https://p.w3layouts.com/demos/28-03-2016/green_wheels/web/applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="https://p.w3layouts.com/demos/28-03-2016/green_wheels/web/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="https://p.w3layouts.com/demos/28-03-2016/green_wheels/web/css/style.css" rel='stylesheet' type='text/css' />
+    <link href='https://p.w3layouts.com/demos/28-03-2016/green_wheels/web///fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
+    <link href='https://p.w3layouts.com/demos/28-03-2016/green_wheels/web///fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='https://p.w3layouts.com/demos/28-03-2016/green_wheels/web///fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href="https://p.w3layouts.com/demos/28-03-2016/green_wheels/web/css/font-awesome.css" rel="stylesheet">
+    <!-- Custom Theme files -->
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!--animate-->
+    <link href="https://p.w3layouts.com/demos/28-03-2016/green_wheels/web/css/animate.css" rel="stylesheet" type="text/css" media="all">
+    <script src="js/wow.min.js"></script>
+      <script>
+         new WOW().init();
+      </script>
+    <!--//end-animate-->
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <!-- top-header -->
+    <div class="top-header">
+      <div class="container">
+        <ul class="tp-hd-lft wow fadeInLeft animated" data-wow-delay=".5s">
+          <li class="hm"><i class="fa fa-home"></i></a></li>
+          <li class="prnt"><a href="javascript:window.print()">Print/SMS Ticket</a></li>
+            
+        </ul>
+        <ul class="tp-hd-rgt wow fadeInRight animated" data-wow-delay=".5s"> 
+          <% if current_user %>
+            <li class="tol"><%= link_to 'Edit Personal info  ',edit_registration_path(current_user)%></li> 
+            <li class="sigi"><%= link_to 'Log out',destroy_user_session_path, method: :delete %></li>
+          <%else%>				
+            <li class="tol">Toll Number : 123-4568790</li>
+            <li class="sig"><%= link_to 'Sign Up',new_user_registration_path %></li> 
+            <li class="sigi"><%= link_to 'Log In',new_user_session_path %></li>
+          <%end%>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <!--- /top-header ---->
+    <!--- header ---->
+    <div class="header">
+      <div class="container">
+        <div class="logo wow fadeInDown animated" data-wow-delay=".5s">
+          <h2><span><strong>Raye7</strong></span></h2>
+        </div>
+        <div class="lock fadeInDown animated" data-wow-delay=".5s"> 
+          <li><i class="fa fa-lock"></i></li>
+                <li><div class="securetxt">SAFE &amp; SECURE<br> ONLINE PAYMENTS</div></li>
+          <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <!--- /header ---->
+<!---728x90--->
     <%= yield %>
   </body>
 </html>

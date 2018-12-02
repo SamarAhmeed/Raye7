@@ -8,9 +8,11 @@ things to do in the application later:
 
 1-some actions in the controllers need testing
 
-2-add integration test
+2-validate date in model model need testing
 
-3-edit and destory actions in places controller 
+3-add integration test
 
-4-give the users ability to add places (can be added through "./places/new")
+4-edit and destory actions in places controller 
+
+5-give the users ability to add places (can be added through "./places/new")
 

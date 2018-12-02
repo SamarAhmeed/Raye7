@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+this is backend demo for raye7 application
 
-Things you may want to cover:
+you can find the application run on https://obscure-ocean-42525.herokuapp.com/
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+things to do in the application later:
+1-some actions in the controllers need testing
+2-add integration test
+3-edit and destory actions in places controller 
+4-give the users ability to add places (can be added through "./places/new")

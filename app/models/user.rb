@@ -7,6 +7,6 @@ class User < ApplicationRecord
   #validates :full_name, on: :create,on: :update
   validates_presence_of :full_name
   validates_length_of :full_name ,minimum: 6
-  has_many :trips
-  has_many :pickups
+  has_many :trips, dependent: :destroy 
+  has_many :pickups, dependent: :destroy 
 end

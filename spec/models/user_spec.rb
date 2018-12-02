@@ -12,8 +12,8 @@ RSpec.describe User, type: :model do
       #   expect(user).to eq(false)
       # end
       it {should validate_uniqueness_of(:phone_number)}
-      it {should have_many(:trips)}
-      it {should have_many(:pickups)}
+      it {should have_many(:trips).dependent(:destroy) }
+      it {should have_many(:pickups).dependent(:destroy) }
       it {should validate_presence_of(:full_name)}
       it {should validate_length_of(:full_name).is_at_least(6)}
   end

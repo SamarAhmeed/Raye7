@@ -4,7 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates_uniqueness_of :phone_number
-  validates :full_name, presence: true, length: {minimum: 6}, on: :create,on: :update, allow_nil: false
+  #validates :full_name, on: :create,on: :update
+  validates_presence_of :full_name
+  validates_length_of :full_name ,minimum: 6
   has_many :trips
   has_many :pickups
 end
